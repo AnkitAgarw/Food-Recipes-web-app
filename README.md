@@ -22,9 +22,9 @@ Then, run
 ```
 python3 manage.py runserver
 ```
-Open the link shown in server on the browser.
+Open the link shown.
 Go to the Register on the site.
- Register yourself
+Register yourself
 then login from login in the navigation bar.
 now go to the Create  page.
 add a recipe
