@@ -1,0 +1,46 @@
+
+.Container_form{
+    width:600px;
+    margin: 0 auto;
+}
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea
+{
+    padding: 10px;
+    border:solid 1px #454545;
+    display:block;
+    width: 50%;
+    font-size: 16px;
+    color:#777;
+    margin: 0 0 20px;    
+}
+fieldset {
+    padding: 40px;
+    border:solid 1px #aaa;
+    background-color: aquamarine;
+}
+fieldset legend{
+    padding: 10px;
+    background-color: white;
+    border: solid 1px #aaa;
+}
+.form{
+    margin-top:40px;
+}
+.form-submit, .btn-primary{
+    background: linear-gradient(red, orange);
+    height:40px ;
+    width:30%;
+    border: solid 1px #777;
+    padding: 0 40px;
+    color:white;
+}
+.form-submit:hover, .btn-primary:hover{
+    background: linear-gradient(orange, red);
+    cursor:pointer;
+}
+.form-submit:active, .btn-primary:active{
+    border: solid 2px black;
+}

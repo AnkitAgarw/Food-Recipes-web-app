@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+  .post-body img {
+    width: 100%;
+  }
+</style>
+
+    <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="post blog-post col-lg-8"> 
+          <div class="container">
+            <div class="post-single" style="background-color:#eee; width:700px; margin:5% auto; padding: 40px">
+              <h1 style="padding:-10; margin-bottom:-10;">{{ post.title }}<a href="#"></a></h1>
+              <div style="padding:-10; margin-top:-10;">
+                {{ post.Cuisine }}
+              </div>
+              <br><br><br>
+              <div class="post-thumbnail"><img src="{{ post.image.url }}" alt="..." class="img-fluid" style="width:600px; margin-left: 50px;"></div>
+              <br><br><br>
+              <div class="post-details">
+                <div class="">
+                  <div><span>Posted by: </span>{{ post.author.user.username }}</div>
+                  <div><span>Posted: </span>{{ post.timestamp|timesince }} ago</div>
+                </div>
+                </div>
+                <br><br><br>
+                <span>Ingredients:</span>
+                <div class="post-ingredients">
+                  <br>
+                  {{ post.ingredient }}
+                </div>
+                <br><br><br>
+                <span>Recipe:</span>
+                <div class="post-recipe">
+                  <br>
+                  {{ post.recipe }}
+                </div>
+                <div class="">
+                {% if post.previous_post %}
+                <a href="{{ post.previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center">
+                    <div class="text"><strong class="text-primary">Previous Post </strong>
+                      <h6>{{ post.previous_post.title }}</h6>
+                    </div>
+                </a>
+                {% endif %}
+                {% if post.next_post %}
+                <a href="{{ post.next_post.get_absolute_url }}" class="">
+                    <div class="text"><strong class="text-primary">Next Post </strong>
+                      <h6>{{ post.next_post.title }}</h6>
+                    </div>
+                </a>
+                {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+{% endblock content %}

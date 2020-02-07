@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+{% include "head.html" %}
+
+<body>
+
+    {% include 'navbar.html' %}
+
+
+    {% block content %}
+    {% endblock content %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="messages" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    
+    {% include 'footer.html' %}
+    <br><br><br>
+
+</body>
+
+</html>

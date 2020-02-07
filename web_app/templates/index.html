@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section-->
+<div class="bgindex">
+
+  <section class='bg-index' style="background: url({% static 'img/bg1.jpg' %});">
+    <div id='Page-caption'>
+      <h1>Food Recipes: A place to share yummy recipes</h1>
+    </div>
+
+  </section>
+</div>
+<!-- Intro Section-->
+<section class="intro-index">
+  <h2 class="intro-Header">Welcome...</h2>
+  <p class="intro-text">Lorem ipsum dolor sit amet, nominati delicatissimi ei vix, ut ferri constituto sea. Pri ei
+    postulant liberavisse reprehendunt, paulo laudem eu quo. Ei has detraxit liberavisse, simul malorum delicatissimi
+    vim et. Sed ut falli percipit concludaturque, eam ex putant volumus adipiscing, eu insolens salutatus duo.</p>
+</section>
+<section class="random_posts">
+  {% for obj in object_list %}
+    <div class="{% if forloop.counter|divisibleby:2 %}clearfix_middle{% else %}clearfix{% endif %}">
+    <div class="image-random-posts"><img style="height:250px" src="{{ obj.image.url }}"></div>
+    <div class="Cuisine-index">
+      <a class='Cuisine' href="#">{{ obj.Cuisine }}</a>
+    </div>
+    <a href={{obj.get_absolute_url}} class='post-title'>
+      <h2 class='post-title'>{{ obj.title }}</h2>
+    </a>
+    <p class='posts-text'>{{ obj.recipe|linebreaks|truncatechars:200 }}</p>
+    <footer class="author_row">
+      <div class="title"><span>Posted by: {{ obj.author }}</span></div>
+      <div class="date">Posted: {{ obj.timestamp|timesince }} ago</div>
+    </footer>
+  </div>
+  {% endfor %}
+  <br><br>
+</section>
+<!-- Divider Section-->
+<div class="bgindex">
+
+  <section style="background: url({% static 'img/bg1.jpg' %});">
+    <div id='Page-caption'>
+      <h1> </h1>
+    </div>
+
+  </section>
+</div>
+
+
+{% endblock content %}

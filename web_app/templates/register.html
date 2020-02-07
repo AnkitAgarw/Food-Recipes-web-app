@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class='Container_form'>
+    <form class='form' action='register' method="POST">
+        <fieldset>
+            <legend> Register</legend>
+            {% csrf_token %}
+            <input class='form-input' type="text" name="first_name" placeholder="First Name"><br>
+            <input class='form-input' type="text" name="last_name" placeholder="last Name"><br>
+            <input class='form-input' type="text" name="username" placeholder="Username"><br>
+            <input class='form-input' type="email" name="email" placeholder="email"><br>
+            <input class='form-input' type="password" name="password1" placeholder="password"><br>
+            <input class='form-input' type="password" name="password2" placeholder="retype password"><br>
+            <input class='form-submit' type="submit" placeholder="submit">
+        </fieldset>
+    </form>
+</div>
+<div>
+</div>
+{% endblock content %}

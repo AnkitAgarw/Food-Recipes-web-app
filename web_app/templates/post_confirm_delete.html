@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main> 
+          <div class="Container_form">
+            <form method="post" style="margin:10px;">
+              <fieldset>
+                <legend>Delete?</legend>
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <input type="submit" value="Confirm" class='form-submit'>
+              </fieldset>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+{% endblock content %}

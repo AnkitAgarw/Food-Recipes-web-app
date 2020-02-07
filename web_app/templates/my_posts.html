@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .post-body img {
+        width: 100%;
+    }
+</style>
+
+  <br><br><br>
+  <h2 style="margin-left: 15%;">Your Posts:</h2>
+          <section class="random_posts">
+            {% for obj in posts %}
+                <div class="{% if forloop.counter|divisibleby:2 %}clearfix_middle{% else %}clearfix{% endif %}">
+              <div class="image-random-posts"><img style="height:250px" src="{{ obj.image.url }}"></div>
+              <div class="Cuisine-index">
+                <a class='Cuisine' href="#">{{ obj.Cuisine }}</a>
+              </div>
+              <a href={{obj.get_absolute_url}} class='post-title'>
+                <h2 class='post-title'>{{ obj.title }}</h2>
+              </a>
+              <p class='posts-text'>{{ obj.recipe|linebreaks|truncatechars:200 }}</p>
+              <footer class="author_row">
+                <div class="title"><span>Posted by: {{ obj.author }}</span></div>
+                <div class="date">Posted: {{ obj.timestamp|timesince }} ago</div>
+                <br><br>
+                <div>
+                    <a href="{% url 'post-update' pk=obj.pk %}">Update</a>
+                    <a href="{% url 'post-delete' pk=obj.pk %}">Delete</a>
+                  </div>    
+              </footer>
+            </div>
+            {% endfor %}
+            <br><br><br><br><br><br>
+          </section>
+          
+    </div>
+</div>
+{% endblock content %}

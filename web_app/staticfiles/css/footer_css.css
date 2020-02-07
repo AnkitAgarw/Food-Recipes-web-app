@@ -1,0 +1,25 @@
+.main-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #555;
+  color: white;
+
+}
+#footer-made-by{
+    display: inline;
+    float: right;    
+    font-size: 20px;
+    padding:10px 10px;
+}
+#footer-made-by:hover, #footer-blog-name:hover{
+    cursor:pointer;
+    color:#777;
+}
+#footer-blog-name{
+    display: inline;
+    float: left;    
+    font-size: 20px;
+    padding:10px 10px;
+}

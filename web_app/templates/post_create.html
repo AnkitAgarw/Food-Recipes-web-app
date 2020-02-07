@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class=""">
+{{ form.media }}
+<div class=Container_form>
+    <br><br><br>
+<form method="POST" action="." enctype="multipart/form-data">
+    <fieldset>
+    <legend>New Recipe</legend>
+    {% csrf_token %}
+    {{ form }}
+    <br><br><br>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    </fieldset>
+    <br><br><br>
+</form>
+</div>
+<br><br>
+</div>
+
+{% endblock content %}
