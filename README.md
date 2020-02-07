@@ -17,7 +17,7 @@ pip install Pillow
 
 ### Installing
 
-Move to the fist web_app directory.
+Move inside the web_app directory.
 Then, run 
 ```
 python3 manage.py runserver
