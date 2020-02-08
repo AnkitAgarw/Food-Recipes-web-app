@@ -1,3 +1,4 @@
+## **Note** : the with posts branch has 4 posts and 2 accounts added into it. id and paswords for those are given in the readme file of that branch.
 # Food Recipes
 
 You can add posts and recipies after registration. Delete the posts from my_posts.
